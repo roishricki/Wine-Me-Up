@@ -1,0 +1,47 @@
+<html xmlns="http://www.w3.org/1999/xhtml">
+ <head>
+    <link rel="stylesheet" href="winery.css">
+    <link rel="stylesheet" href="dropDown.css">
+    <link rel="stylesheet" href="form.css">
+    <script src="https://code.jquery.com/jquery-latest.min.js"></script>
+    <script src="initMap.js"></script>
+    <script src="placesInfo.js"></script>
+    <script src="markersInfo.js"></script>
+    <script src="winery.js"></script>
+    <script src="buttonsCreator.js"></script>
+    <script src="filter.js"></script>
+    <!-- <div class="main-title txt">Wellcome to our project</div> -->
+    <div id="logo_container"><img src='./logo.png'></img> </div>
+ </head>
+ <body>
+     <script async defer src="https://maps.googleapis.com/maps/api/js?key=********&callback=initMap&region=IL&language=he&libraries=places&components=country:IL"></script>
+     <div id='menu-bar'>
+        <div id="form-container">
+            <input disabled id="searchTextField" class="form__field" type="text" size="29" placeholder="  Enter a location  ">
+            <button disabled id="search" class="txt" onclick="searchOnClick()">search</button>
+        </div>
+         <button disabled class= "button-18 main_menu" id='drop-button' onclick="dropWineryList()">Find wineries locations</button>
+         <button disabled class= "button-18 main_menu" id='clear-markers' onclick="clearMap()">Clear Map</button>
+         <button class= "button-18 main_menu" id='my-location' onclick="getLocation()">Set My Location</button>
+         <div id='filter-container'>
+        </div>
+         <div class="txt" id="loading" style="margin-top: 2px">loading</div>
+         <div class="lds-ring"><div></div><div></div><div></div><div></div></div>
+     </div>
+    <div id='main-area'>
+     <div id='left-sidebar' class="sidebar">
+     </div>
+     <div id='map-wrapper'>
+         <div id='map'></div>
+     </div>
+    <div id='right-sidebar' class="sidebar">
+        <button disabled class= "button-64 side_menu" id='favorites' onclick="showFavoriteWinery()">
+            <span class="txt">Favorites</span></button>
+        <button disabled class= "button-64 side_menu" id='wishlist' onclick="showWishWinery()">
+            <span class="txt">Wish List</span></button> 
+        <button disabled class= "button-64 side_menu" id='filter' onclick="filterBy()">
+            <span class="txt">Filter</span></button>    
+    </div>
+     </div>
+        
+ <body>
